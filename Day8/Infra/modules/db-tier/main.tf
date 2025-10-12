@@ -20,7 +20,7 @@ resource "aws_security_group" "rds" {
     from_port   = 5432
     to_port     = 5432
     protocol    = "tcp"
-    cidr_blocks = [var.private_subnet]
+    cidr_blocks = [var.private_subnet_cidr]
   }
 
   egress {
@@ -56,7 +56,7 @@ resource "aws_db_instance" "postgres" {
 
 resource "aws_db_subnet_group" "main" {
   name       = "${var.prefix}-db-subnet-group"
-  subnet_ids = [var.private_subnet]
+  subnet_ids = [var.private_subnet_a, var.private_subnet_b]
 
   tags = merge(
     var.common_tags,

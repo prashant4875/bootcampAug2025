@@ -13,7 +13,9 @@ module "db" {
     source = "./modules/db-tier"
 
     vpc_id         = module.networking.vpc_id
-    private_subnet = module.networking.private_subnet_id
+    private_subnet_a = module.networking.private_subnet_id
+    private_subnet_b = module.networking.aws_subnet_private_b_id
+    private_subnet_cidr = module.networking.private_subnet_cidr
     db_name = var.db_name
     db_username = var.db_username
     common_tags = local.common_tags

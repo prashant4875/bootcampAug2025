@@ -2,9 +2,17 @@ variable "vpc_id" {
   type    = string
 }
 
-variable "private_subnet" {
+variable "private_subnet_a" {
   type    = string
 }
+
+variable "private_subnet_b" {
+  type    = string
+}
+
+variable "private_subnet_cidr" {
+  type    = string
+} 
 
 variable "db_name" {
   description = "The name of the RDS database"
