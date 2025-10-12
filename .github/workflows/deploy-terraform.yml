@@ -29,6 +29,7 @@ jobs:
           uses: aws-actions/configure-aws-credentials@v4
           with:
             role-to-assume: arn:aws:iam::623180295620:role/Github_Role
+            aws-region: eu-west-1
 
         - name: Terraform Init
           working-directory: ${{ env.TF_WORKING_DIR }}
