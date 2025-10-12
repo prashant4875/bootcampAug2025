@@ -22,23 +22,10 @@ resource "aws_subnet" "public" {
   )
 }
 
-resource "aws_subnet" "public-b" {
-
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = var.subnet_cidr_list[1]
-  map_public_ip_on_launch = true
-  availability_zone = "${var.aws_region}b"
-
-  tags = merge(
-    var.common_tags, 
-    tomap({ Name = "${var.prefix}-public-subnet-b" })
-  )
-}
-
 resource "aws_subnet" "private" {
 
   vpc_id            = aws_vpc.main.id
-  cidr_block        = var.subnet_cidr_list[2]
+  cidr_block        = var.subnet_cidr_list[1]
   availability_zone = "${var.aws_region}a"
 
   tags = merge(
@@ -49,7 +36,7 @@ resource "aws_subnet" "private" {
 
 resource "aws_subnet" "private_b" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = var.subnet_cidr_list[3]
+  cidr_block        = var.subnet_cidr_list[2]
   availability_zone = "${var.aws_region}b"
 
   tags = merge(
