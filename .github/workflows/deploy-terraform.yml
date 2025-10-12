@@ -12,6 +12,10 @@ env:
     TF_WORKING_DIR: ./Day8/Infra
     TF_ENV: dev
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
     terraform:
         runs-on: ubuntu-latest
