@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - './Day8/Infra'
 
   workflow_dispatch:
 
