@@ -22,7 +22,7 @@ resource "aws_subnet" "public" {
   )
 }
 
-resource "aws_subnet" "public" {
+resource "aws_subnet" "public-b" {
 
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.subnet_cidr_list[1]
