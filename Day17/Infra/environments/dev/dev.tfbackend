@@ -1,0 +1,4 @@
+bucket         = "my-company-terraform-state-psb-dev"
+key            = "ecs/dev/terraform.tfstate"
+region         = "us-east-1"
+encrypt        = true
